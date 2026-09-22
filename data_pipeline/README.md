@@ -10,6 +10,123 @@ The pipeline performs:
 Scraping → Cleaning → Currency Conversion → SQLite Storage →
 SQL Analysis → Pandas Analysis
 
+## Installation and Running the Pipeline
+
+### Prerequisites
+
+Make sure the following are installed on your system:
+
+- Python 3.9 or higher
+- Git
+- VS Code (recommended)
+
+### 1. Clone the Repository
+
+Open a terminal and run:
+
+```bash
+git clone <YOUR_GITHUB_REPOSITORY_URL>
+cd <YOUR_REPOSITORY_NAME>
+
+### 2.Navigate to the Data Pipeline Folder
+
+ cd data_pipeline
+
+###3. Create a Virtual Environment
+
+###Create a Python virtual environment:
+
+python -m venv venv
+
+###Activate the virtual environment.
+
+###Windows:
+
+venv\Scripts\activate
+
+###macOS/Linux:
+
+source venv/bin/activate
+
+###After activation, the terminal should show (venv).
+
+###4. Install Required Python Packages
+
+###Install the dependencies from requirements.txt
+
+pip install -r requirements.txt
+
+
+The project requires:
+
+requests
+beautifulsoup4
+pandas
+
+SQLite is included with Python and does not need to be installed separately.
+
+###5. Open the Jupyter Notebook
+
+Start Jupyter Notebook:
+
+jupyter notebook
+
+This will open Jupyter Notebook in your browser.
+
+Open:
+
+books_scraping.ipynb
+###6. Run the Pipeline
+
+Run all cells in books_scraping.ipynb from top to bottom.
+
+Kernel → Restart & Run All
+
+The notebook will:
+
+Scrape the first 5 pages of the Books to Scrape catalogue.
+Extract book title, price, rating, availability, and category.
+Clean and transform the scraped data.
+Convert GBP prices to INR using the fixed rate of 105.50.
+Create the SQLite database.
+Create the categories and books tables.
+Insert the cleaned data into SQLite.
+Execute the required SQL queries.
+Compare the SQL JOIN result with the equivalent pandas merge() result.
+
+
+7. Expected Outputs
+
+After successfully running the notebook, the project should contain:
+
+data_pipeline/
+├── books_scraping.ipynb
+├── books_catalogue.db
+├── books_cleaned.csv
+├── sql_queries.txt
+├── sql_outputs.txt
+├── requirements.txt
+└── README.md
+
+
+  along with  above there will be query_output.csv's also
+
+
+The notebook should produce:
+
+At least 60 scraped books.
+Books from at least 3 categories.
+price_gbp as a numeric column.
+rating as integers from 1 to 5.
+in_stock as Boolean values.
+price_inr calculated using 1 GBP = 105.50 INR.
+SQLite books and categories tables.
+At least 5 SQL queries and their outputs.
+SQL JOIN and pandas merge() comparison.
+
+Below is the detailed information
+
+
 ## Data Source
 
 Website:
