@@ -1,12 +1,6 @@
-# Virtual Environment
 .venv/
 venv/
-ENV/
-
-# Python Cache
 __pycache__/
 *.pyc
-
-# Databases
 support_assistant/chroma_db/
 *.sqlite3
